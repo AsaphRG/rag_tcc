@@ -1,5 +1,5 @@
 from google.adk.agents import Agent
-from google.genai.types import HarmCategory, HarmBlockThreshold, SafetySetting
+from google.genai.types import HarmCategory, HarmBlockThreshold, SafetySetting, GenerateContentConfig
 
 from .tools.add_data import add_data
 from .tools.create_corpus import create_corpus
@@ -37,12 +37,11 @@ root_agent = Agent(
    name="AdminAgent",
    # Using Gemini 2.5 Flash for best performance with RAG operations
    model="gemini-2.5-flash",
-   # model_kwargs={
-   #    "temperature": 0.2,
-   #    "top_p": 0.95,
-   #    "top_k": 40,
-   #    "safety_settings": safety_settings
-   # },
+   generate_content_config=GenerateContentConfig(
+      temperature=0.2,
+      top_p=0.95,
+      safety_settings=safety_settings
+   ),
    description="Prowise RAG Agent",
    tools=[
       rag_query,
