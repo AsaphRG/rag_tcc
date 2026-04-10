@@ -1,0 +1,11 @@
+venv/
+.adk/
+.git/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.gitignore
+.vscode/
+.idea/
