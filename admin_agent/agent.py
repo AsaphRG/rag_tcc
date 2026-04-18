@@ -34,7 +34,7 @@ safety_settings = [
 ]
 
 root_agent = Agent(
-   name="AdminAgent",
+   name="admin_agent",
    # Using Gemini 2.5 Flash for best performance with RAG operations
    model="gemini-2.5-flash",
    generate_content_config=GenerateContentConfig(

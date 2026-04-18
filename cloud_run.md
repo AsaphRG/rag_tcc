@@ -1,0 +1,1 @@
+gcloud run deploy prowise-rag-agent --source . --region us-west1 --allow-unauthenticated --set-env-vars GOOGLE_CLOUD_PROJECT=rag-agent-490801,GOOGLE_CLOUD_LOCATION=us-west1,GOOGLE_GENAI_USE_VERTEXAI=True
