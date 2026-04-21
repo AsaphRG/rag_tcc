@@ -57,7 +57,7 @@ def main():
     # Send a test query
     print("\nSending test query...")
     test_message = (
-        "Hello, how are you doing today? I hope you're having a wonderful day!"
+        "O que tem no corpus neg_cios? Me conte resumidamente."
     )
     print(f"Message: {test_message}")
     print("\nResponse:")
