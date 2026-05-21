@@ -31,8 +31,9 @@ safety_settings = [
 
 root_agent = Agent(
    name="admin_agent",
-   # Usando o nome mais genérico para garantir disponibilidade em us-west1
-   model="gemini-1.5-flash",
+   # gemini-2.0-flash-001 está disponível em us-west1 e é o modelo recomendado
+   # pelo ADK 1.29+. gemini-1.5-flash está em deprecation path.
+   model="gemini-2.0-flash-001",
    generate_content_config=GenerateContentConfig(
       temperature=0.2,
       top_p=0.95,
