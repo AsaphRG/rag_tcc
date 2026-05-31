@@ -172,6 +172,9 @@ def main(argv=None):
     )
     location = FLAGS.location if FLAGS.location else os.getenv("GOOGLE_CLOUD_LOCATION")
     bucket = FLAGS.bucket if FLAGS.bucket else os.getenv("GOOGLE_CLOUD_STAGING_BUCKET")
+    if bucket and not bucket.startswith("gs://"):
+        bucket = f"gs://{bucket}"
+    
     user_id = FLAGS.user_id
 
     if not project_id:
@@ -184,6 +187,7 @@ def main(argv=None):
         print("Missing required environment variable: GOOGLE_CLOUD_STAGING_BUCKET")
         return
 
+    print(f"Initializing Vertex AI with project={project_id}, location={location}, staging_bucket={bucket}")
     vertexai.init(
         project=project_id,
         location=location,
